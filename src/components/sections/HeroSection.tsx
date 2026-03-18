@@ -42,17 +42,36 @@ export default function HeroSection() {
           className="mb-8 flex justify-center animate-fade-in"
           style={{ animationDuration: "0.8s" }}
         >
-          <div className="relative group">
-            {/* Glow ring */}
+          <div className="relative group cursor-pointer">
+            {/* Outer rotating ring */}
             <div
-              className="absolute -inset-3 rounded-full opacity-40 blur-md transition-all duration-500 group-hover:opacity-70 group-hover:-inset-4"
-              style={{ background: "radial-gradient(circle, var(--gold), transparent 70%)" }}
+              className="absolute -inset-6 rounded-full opacity-20 pointer-events-none"
+              style={{
+                background: "conic-gradient(from 0deg, var(--gold), transparent, var(--gold), transparent, var(--gold))",
+                animation: "spin 8s linear infinite",
+              }}
+            />
+            {/* Pulsing glow */}
+            <div
+              className="absolute -inset-4 rounded-full pointer-events-none"
+              style={{
+                background: "radial-gradient(circle, rgba(201,168,76,0.25) 0%, transparent 70%)",
+                animation: "pulse-glow 2.5s ease-in-out infinite",
+              }}
+            />
+            {/* Inner glow on hover */}
+            <div
+              className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-60 blur-lg transition-all duration-700 pointer-events-none"
+              style={{ background: "radial-gradient(circle, var(--gold), transparent 65%)" }}
             />
             <img
               src={COAT_OF_ARMS_URL}
-              alt="Герб проекта ГРЕБ — Неделя финансовой грамотности Сириус 55"
-              className="relative w-52 h-52 md:w-64 md:h-64 object-contain rounded-none drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
-              style={{ filter: "drop-shadow(0 0 30px rgba(201,168,76,0.35))" }}
+              alt="Герб проекта ГЕРБ — Неделя финансовой грамотности Сириус 55"
+              className="relative w-56 h-56 md:w-72 md:h-72 object-contain transition-transform duration-500 group-hover:scale-110"
+              style={{
+                filter: "drop-shadow(0 0 24px rgba(201,168,76,0.5)) drop-shadow(0 8px 32px rgba(0,0,0,0.4))",
+                animation: "floatHerb 4s ease-in-out infinite",
+              }}
             />
           </div>
         </div>
@@ -82,7 +101,7 @@ export default function HeroSection() {
             className="relative"
             style={{ color: "var(--gold)" }}
           >
-            ГРЕБ
+            ГЕРБ
           </span>
         </h1>
 

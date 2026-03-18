@@ -40,7 +40,7 @@ export default function AboutSection() {
               className="font-cormorant text-4xl md:text-5xl font-bold mb-4"
               style={{ color: "var(--navy)" }}
             >
-              Кто такие ГРЕБ и зачем мы?
+              Кто такие ГЕРБ и зачем мы?
             </h2>
             <span className="gold-line mx-auto block" />
           </div>
@@ -58,7 +58,7 @@ export default function AboutSection() {
               </div>
               <p className="text-lg leading-relaxed mb-5" style={{ color: "rgba(13,27,62,0.72)" }}>
                 Мы — обучающиеся дополнительной программы <strong>«Сириус 55»</strong> по направлению
-                финансовой грамотности. Наш проект ГРЕБ — это наш продукт: весёлый, полезный и
+                финансовой грамотности. Наш проект ГЕРБ — это наш продукт: весёлый, полезный и
                 понятный сайт про деньги.
               </p>
               <p className="text-lg leading-relaxed mb-8" style={{ color: "rgba(13,27,62,0.72)" }}>
@@ -94,7 +94,7 @@ export default function AboutSection() {
               >
                 <img
                   src={COAT_OF_ARMS_URL}
-                  alt="Герб ГРЕБ"
+                  alt="Герб ГЕРБ"
                   className="w-20 h-20 object-contain flex-shrink-0"
                   style={{ filter: "drop-shadow(0 0 10px rgba(201,168,76,0.3))" }}
                 />
@@ -105,7 +105,7 @@ export default function AboutSection() {
                   </p>
                   <span className="gold-line block mt-2" />
                   <p className="mt-2 text-xs font-bold tracking-wide" style={{ color: "var(--gold)" }}>
-                    Девиз команды ГРЕБ
+                    Девиз команды ГЕРБ
                   </p>
                 </div>
               </div>

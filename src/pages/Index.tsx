@@ -15,7 +15,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <span className="font-bold text-xl tracking-widest" style={{ color: "var(--gold)" }}>
-            ГРЕБ
+            ГЕРБ
           </span>
           <span style={{ color: "rgba(255,255,255,0.15)" }}>|</span>
           <span className="text-sm" style={{ color: "rgba(255,255,255,0.35)" }}>
@@ -44,7 +44,7 @@ function Footer() {
 
         <div className="text-center md:text-right">
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
-            © 2026 ГРЕБ • Сириус 55
+            © 2026 ГЕРБ • Сириус 55
           </p>
           <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.12)" }}>
             Деньги знать — не стыдно 💛

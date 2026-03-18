@@ -34,7 +34,7 @@ export default function Navbar() {
             className="font-bold text-xl tracking-widest uppercase transition-all group-hover:scale-110"
             style={{ color: "var(--gold)" }}
           >
-            ГРЕБ
+            ГЕРБ
           </span>
           <span
             className="text-xs font-medium px-2 py-0.5 rounded-full hidden sm:block"
