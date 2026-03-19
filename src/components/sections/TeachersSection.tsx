@@ -1,4 +1,4 @@
-import { SENIOR_METHODISTS, TEAM_GROUPS } from "./data";
+import { SENIOR_METHODISTS } from "./data";
 import { useScrollReveal } from "./hooks";
 
 function RevealSection({
@@ -23,91 +23,53 @@ function RevealSection({
 
 function PersonCard({
   name,
+  role,
   photo,
-  accentColor,
+  index,
 }: {
   name: string;
+  role: string;
   photo: string;
-  accentColor: string;
+  index: number;
 }) {
   return (
-    <div className="flex flex-col items-center gap-2 group">
+    <div
+      className="flex flex-col items-center gap-3 group"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
       <div
-        className="relative overflow-hidden rounded-2xl transition-all duration-300 group-hover:scale-105 group-hover:-translate-y-1"
+        className="relative overflow-hidden rounded-2xl transition-all duration-400 group-hover:scale-105 group-hover:-translate-y-2"
         style={{
-          boxShadow: `0 4px 24px rgba(0,0,0,0.3)`,
+          boxShadow: "0 6px 30px rgba(0,0,0,0.4)",
         }}
       >
         <img
           src={photo}
           alt={name}
-          className="w-32 h-40 object-cover object-top"
+          className="w-36 h-48 md:w-44 md:h-56 object-cover object-top"
           style={{ display: "block" }}
         />
-        {/* color overlay on hover */}
         <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
-          style={{ background: accentColor }}
+          className="absolute inset-0 opacity-0 group-hover:opacity-25 transition-opacity duration-300"
+          style={{ background: "var(--gold)" }}
         />
-        {/* bottom shimmer */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-10"
+          className="absolute bottom-0 left-0 right-0 h-12"
           style={{
-            background: `linear-gradient(to top, ${accentColor}33, transparent)`,
+            background: "linear-gradient(to top, rgba(201,168,76,0.25), transparent)",
           }}
         />
       </div>
-      <p className="text-xs font-semibold text-white text-center leading-tight max-w-[128px]">
-        {name}
-      </p>
-    </div>
-  );
-}
-
-function GroupBlock({
-  title,
-  emoji,
-  color,
-  bg,
-  border,
-  members,
-}: {
-  title: string;
-  emoji: string;
-  color: string;
-  bg: string;
-  border: string;
-  members: { name: string; photo: string }[];
-}) {
-  return (
-    <RevealSection>
-      <div
-        className="rounded-3xl p-6 border mb-10"
-        style={{ background: bg, borderColor: border }}
-      >
-        {/* Group header */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-2xl">{emoji}</span>
-          <div>
-            <h3 className="font-bold text-lg text-white">{title}</h3>
-            <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-              {members.length} {members.length === 1 ? "человек" : members.length < 5 ? "человека" : "человек"}
-            </p>
-          </div>
-          <div
-            className="ml-auto h-0.5 flex-1 rounded"
-            style={{ background: `linear-gradient(to right, ${color}55, transparent)` }}
-          />
-        </div>
-
-        {/* Members grid */}
-        <div className="flex flex-wrap gap-5 justify-start">
-          {members.map((m, i) => (
-            <PersonCard key={i} name={m.name} photo={m.photo} accentColor={color} />
-          ))}
-        </div>
+      <div className="text-center">
+        <p className="text-sm font-bold text-white leading-snug max-w-[160px]">{name}</p>
+        <p
+          className="text-xs mt-1 font-medium"
+          style={{ color: "var(--gold)" }}
+        >
+          {role}
+        </p>
       </div>
-    </RevealSection>
+    </div>
   );
 }
 
@@ -116,7 +78,6 @@ export default function TeachersSection() {
     <section id="teachers" className="py-24 px-6" style={{ background: "var(--navy)" }}>
       <div className="max-w-7xl mx-auto">
 
-        {/* Header */}
         <RevealSection>
           <div className="text-center mb-16">
             <p
@@ -135,55 +96,20 @@ export default function TeachersSection() {
           </div>
         </RevealSection>
 
-        {/* Старшие методисты — особый блок */}
         <RevealSection>
-          <div
-            className="rounded-3xl p-6 border mb-10"
-            style={{
-              background: "linear-gradient(135deg, rgba(201,168,76,0.10), rgba(201,168,76,0.04))",
-              borderColor: "rgba(201,168,76,0.3)",
-            }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-2xl">⭐</span>
-              <div>
-                <h3 className="font-bold text-lg text-white">Старшие методисты</h3>
-                <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
-                  {SENIOR_METHODISTS.length} человека — главные архитекторы программы
-                </p>
-              </div>
-              <div
-                className="ml-auto h-0.5 flex-1 rounded"
-                style={{ background: "linear-gradient(to right, rgba(201,168,76,0.6), transparent)" }}
+          <div className="flex flex-wrap gap-6 justify-center">
+            {SENIOR_METHODISTS.map((m, i) => (
+              <PersonCard
+                key={i}
+                name={m.name}
+                role={m.role}
+                photo={m.photo}
+                index={i}
               />
-            </div>
-            <div className="flex flex-wrap gap-5 justify-start">
-              {SENIOR_METHODISTS.map((m, i) => (
-                <PersonCard key={i} name={m.name} photo={m.photo} accentColor="var(--gold)" />
-              ))}
-            </div>
+            ))}
           </div>
         </RevealSection>
 
-        {/* Остальные группы */}
-        {TEAM_GROUPS.map((group, i) => (
-          <GroupBlock key={i} {...group} />
-        ))}
-
-        {/* Fun bottom note */}
-        <RevealSection>
-          <div
-            className="rounded-2xl p-5 text-center border"
-            style={{
-              background: "rgba(255,255,255,0.03)",
-              borderColor: "rgba(255,255,255,0.06)",
-            }}
-          >
-            <p className="text-white/60 text-sm">
-              🤝 Хотите добавить или изменить информацию о команде? Напишите нам!
-            </p>
-          </div>
-        </RevealSection>
       </div>
     </section>
   );

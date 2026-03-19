@@ -1,5 +1,5 @@
 import Icon from "@/components/ui/icon";
-import { COAT_OF_ARMS_URL, FUN_FACTS } from "./data";
+import { FUN_FACTS } from "./data";
 import { scrollToSection } from "./hooks";
 
 export default function HeroSection() {
@@ -37,7 +37,7 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* ГЕРБ — главный символ */}
+        {/* ГЕРБ — главный символ (SVG с русскими надписями и анимацией) */}
         <div
           className="mb-8 flex justify-center animate-fade-in"
           style={{ animationDuration: "0.8s" }}
@@ -64,15 +64,141 @@ export default function HeroSection() {
               className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-60 blur-lg transition-all duration-700 pointer-events-none"
               style={{ background: "radial-gradient(circle, var(--gold), transparent 65%)" }}
             />
-            <img
-              src={COAT_OF_ARMS_URL}
-              alt="Герб проекта ГЕРБ — Неделя финансовой грамотности Сириус 55"
-              className="relative w-56 h-56 md:w-72 md:h-72 object-contain transition-transform duration-500 group-hover:scale-110"
+            {/* SVG Герб с русскими надписями */}
+            <svg
+              viewBox="0 0 260 260"
+              className="relative w-56 h-56 md:w-72 md:h-72 transition-transform duration-500 group-hover:scale-110"
               style={{
                 filter: "drop-shadow(0 0 24px rgba(201,168,76,0.5)) drop-shadow(0 8px 32px rgba(0,0,0,0.4))",
                 animation: "floatHerb 4s ease-in-out infinite",
               }}
-            />
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <radialGradient id="shieldGrad" cx="50%" cy="40%" r="60%">
+                  <stop offset="0%" stopColor="#1a2d5a" />
+                  <stop offset="100%" stopColor="#0d1b3e" />
+                </radialGradient>
+                <radialGradient id="goldGrad" cx="50%" cy="30%" r="70%">
+                  <stop offset="0%" stopColor="#f0d060" />
+                  <stop offset="100%" stopColor="#c9a84c" />
+                </radialGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+                <path id="topArc" d="M 40,130 A 90,90 0 0,1 220,130" />
+                <path id="botArc" d="M 50,145 A 80,80 0 0,0 210,145" />
+              </defs>
+
+              {/* Щит форма */}
+              <path
+                d="M130,12 L230,50 L230,145 Q230,210 130,248 Q30,210 30,145 L30,50 Z"
+                fill="url(#shieldGrad)"
+                stroke="url(#goldGrad)"
+                strokeWidth="3"
+              />
+              {/* Внутренняя обводка щита */}
+              <path
+                d="M130,22 L220,56 L220,145 Q220,202 130,238 Q40,202 40,145 L40,56 Z"
+                fill="none"
+                stroke="rgba(201,168,76,0.3)"
+                strokeWidth="1"
+              />
+
+              {/* Звезда сириуса */}
+              <g style={{ animation: "starPulse 3s ease-in-out infinite" }}>
+                <circle cx="130" cy="100" r="22" fill="none" stroke="url(#goldGrad)" strokeWidth="1.5" opacity="0.5" />
+                {/* 8-лучевая звезда */}
+                {[0,45,90,135,180,225,270,315].map((angle, i) => {
+                  const rad = (angle * Math.PI) / 180;
+                  const x2 = 130 + Math.cos(rad) * 20;
+                  const y2 = 100 + Math.sin(rad) * 20;
+                  const x1 = 130 + Math.cos(rad) * 4;
+                  const y1 = 100 + Math.sin(rad) * 4;
+                  return (
+                    <line
+                      key={i}
+                      x1={x1} y1={y1} x2={x2} y2={y2}
+                      stroke="url(#goldGrad)"
+                      strokeWidth={i % 2 === 0 ? "2.5" : "1.5"}
+                      strokeLinecap="round"
+                      filter="url(#glow)"
+                    />
+                  );
+                })}
+                <circle cx="130" cy="100" r="4" fill="url(#goldGrad)" filter="url(#glow)" />
+              </g>
+
+              {/* Полумесяц */}
+              <path
+                d="M108,100 A22,22 0 1,0 108,100.01"
+                fill="none"
+                stroke="url(#goldGrad)"
+                strokeWidth="0"
+              />
+              <path
+                d="M115,80 Q95,100 115,120"
+                fill="none"
+                stroke="url(#goldGrad)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+
+              {/* Число 55 */}
+              <text
+                x="130"
+                y="155"
+                textAnchor="middle"
+                fill="url(#goldGrad)"
+                fontSize="28"
+                fontWeight="bold"
+                fontFamily="serif"
+                filter="url(#glow)"
+              >
+                55
+              </text>
+
+              {/* Верхняя надпись по дуге */}
+              <text
+                fontSize="10"
+                fontWeight="bold"
+                fontFamily="sans-serif"
+                fill="url(#goldGrad)"
+                letterSpacing="1"
+              >
+                <textPath href="#topArc" startOffset="50%" textAnchor="middle">
+                  СИРИУС · ОМСК
+                </textPath>
+              </text>
+
+              {/* Нижняя надпись по дуге */}
+              <text
+                fontSize="9"
+                fontFamily="sans-serif"
+                fill="rgba(201,168,76,0.8)"
+                letterSpacing="0.5"
+              >
+                <textPath href="#botArc" startOffset="50%" textAnchor="middle">
+                  Финансовая грамотность
+                </textPath>
+              </text>
+
+              {/* Декоративные звёздочки по бокам */}
+              <text x="48" y="140" fontSize="10" fill="url(#goldGrad)" opacity="0.7">✦</text>
+              <text x="202" y="140" fontSize="10" fill="url(#goldGrad)" opacity="0.7">✦</text>
+
+              {/* Нижний орнамент */}
+              <path
+                d="M90,220 Q130,235 170,220"
+                fill="none"
+                stroke="rgba(201,168,76,0.4)"
+                strokeWidth="1.5"
+              />
+            </svg>
           </div>
         </div>
 
