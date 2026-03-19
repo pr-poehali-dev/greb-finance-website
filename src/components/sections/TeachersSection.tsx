@@ -27,6 +27,7 @@ const ROLE_STYLES: Record<string, { accent: string; bg: string; emoji: string }>
   "Заместитель директора": { accent: "#5cb8e4", bg: "rgba(92,184,228,0.1)", emoji: "⭐" },
   "Старший методист": { accent: "#9b7fe8", bg: "rgba(155,127,232,0.1)", emoji: "💎" },
   "Методист": { accent: "#50c882", bg: "rgba(80,200,130,0.08)", emoji: "🌟" },
+  "Доцент кафедры ЭММ": { accent: "#e87b5c", bg: "rgba(232,123,92,0.1)", emoji: "🎓" },
 };
 
 const HEART_COLORS = ["#ff6b8a", "#ff8fab", "#ff69b4", "#ff1493", "#ff85a2", "#e8588c"];
@@ -121,11 +122,11 @@ function PersonCard({
           borderColor: `${heartColor}55`,
           boxShadow: `0 4px 24px rgba(0,0,0,0.2), 0 0 20px ${heartColor}15`,
           animationDelay: `${index * 0.05}s`,
-          width: "230px",
+          width: "300px",
           flexShrink: 0,
         }}
       >
-        <div className="relative overflow-hidden" style={{ height: "250px" }}>
+        <div className="relative overflow-hidden" style={{ height: "320px" }}>
           {hasPhoto ? (
             <img
               src={photo}
@@ -205,7 +206,7 @@ export default function TeachersSection() {
               className="text-xs font-bold tracking-[0.3em] uppercase mb-3"
               style={{ color: "#ff6b8a" }}
             >
-              ❤️ С любовью от студентов ❤️
+              ❤️ С любовью от резидентов нашего направления ❤️
             </p>
             <h2 className="font-cormorant text-4xl md:text-5xl font-bold text-white mb-4">
               Наши{" "}
@@ -218,7 +219,7 @@ export default function TeachersSection() {
               className="mt-4 max-w-2xl mx-auto text-base"
               style={{ color: "rgba(255,255,255,0.55)" }}
             >
-              Сотрудники центра «Сириус» и педагоги Омского педагогического университета — люди, которые делают программу живой, интересной и незабываемой!
+              Преподаватели Омского государственного педагогического университета — люди, которые делают программу живой, интересной и незабываемой!
             </p>
           </div>
         </RevealSection>
@@ -242,7 +243,7 @@ export default function TeachersSection() {
         </RevealSection>
 
         <RevealSection>
-          <div className="flex flex-wrap gap-8 justify-center">
+          <div className="flex flex-wrap gap-12 justify-center">
             {ALL_TEACHERS.map((teacher, i) => (
               <PersonCard
                 key={i}

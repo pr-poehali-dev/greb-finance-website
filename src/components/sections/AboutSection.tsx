@@ -113,9 +113,10 @@ export default function AboutSection() {
                 <img
                   src={COAT_OF_ARMS_URL}
                   alt="Герб финансовой грамотности"
-                  className="w-20 h-20 object-contain flex-shrink-0"
+                  className="w-20 h-20 object-contain flex-shrink-0 rounded-xl"
                   style={{
                     filter: "drop-shadow(0 0 10px rgba(201,168,76,0.3))",
+                    mixBlendMode: "screen",
                   }}
                 />
                 <div>
@@ -169,7 +170,7 @@ export default function AboutSection() {
               style={{ color: "var(--navy)" }}
             >
               <Icon name="BookOpen" size={24} className="inline mr-2 -mt-1" style={{ color: "var(--gold)" }} />
-              Что мы изучаем
+              Что мы изучаем — это ещё только малость
             </h3>
             <p
               className="text-sm mt-2"

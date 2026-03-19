@@ -290,9 +290,10 @@ export default function SecuritySection() {
               </p>
             </div>
             <img
-              src="https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/5f38b4aa-ac64-429b-aeb2-41c0723d86ca.jpg"
+              src="https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/8c1ad858-6c52-4f3a-b362-3d3c9adb8eb4.jpg"
               alt="Осторожно: мошенники! Полная инфографика"
-              className="w-full"
+              className="w-full max-w-3xl mx-auto block"
+              style={{ objectFit: "contain" }}
             />
             <div className="p-4 text-center" style={{ background: "rgba(13,27,62,0.03)" }}>
               <p className="text-xs" style={{ color: "rgba(13,27,62,0.45)" }}>

@@ -49,128 +49,25 @@ export type TeamMember = {
 
 export const ALL_TEACHERS: TeamMember[] = [
   {
-    name: "Баракина Татьяна Вячеславовна",
-    role: "Директор",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/aa748f0c-6aed-4744-b9b8-0b98a066b28e.jpg",
-    fun: "Идейный вдохновитель и хранитель бюджета смены. Знает, куда уходят деньги, но молчит.",
+    name: "Гешко Олеся Александровна",
+    role: "Доцент кафедры ЭММ",
+    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/16e5fe98-a8f7-4167-a29e-4cdf12f206a9.jpg",
+    fun: "Доцент кафедры ЭММ ФГБОУ ВО «ОмГПУ». Превращает экономику в увлекательное приключение!",
   },
   {
-    name: "Летунова Наталья Павловна",
-    role: "Заместитель директора",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/9b3cb666-921f-4ebc-b444-e47a1509fa48.png",
-    fun: "Замещает директора так хорошо, что директор иногда завидует.",
-  },
-  {
-    name: "Андреев Игорь Викторович",
-    role: "Заместитель директора",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/a5352caa-9e96-4650-8d2e-1e144af121e7.png",
-    fun: "Главный аналитик. Может на графике объяснить, почему шоколадка подорожала, а стипендия — нет.",
-  },
-  {
-    name: "Могутова Анна Александровна",
-    role: "Заместитель директора",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/10491b4c-e1c8-43b9-a421-5a9f57113930.png",
-    fun: "Могутова — фамилия говорит сама за себя. Могу-това!",
-  },
-  {
-    name: "Цыганкова Ксения Анатольевна",
-    role: "Заместитель директора",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/df7cfd43-0e3f-4c43-91ba-e88cf0edb173.png",
-    fun: "Предсказывает проблемы раньше, чем они появляются. Магия? Нет — опыт.",
-  },
-  {
-    name: "Жигалкина Анастасия Викторовна",
-    role: "Старший методист",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/3cc17b31-fe4b-4a92-b4f3-21e01eb6d1c0.jpg",
-    fun: "Объясняет методику так, что даже методика сама всё понимает.",
-  },
-  {
-    name: "Капустина Ольга Леонидовна",
-    role: "Старший методист",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/99ba55b7-91c7-42fb-bc20-4777bbe3a5c1.jpg",
-    fun: "Не имеет никакого отношения к капусте. Зато к программе — самое прямое.",
-  },
-  {
-    name: "Грачева Ольга Викторовна",
-    role: "Старший методист",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/6d5a5056-7a92-4bc5-9568-ae53c98f243f.png",
-    fun: "Грачи прилетели — значит, весна и новые идеи для программы!",
-  },
-  {
-    name: "Каримова Алия Абаевна",
-    role: "Старший методист",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/dde420fb-71d3-4a2a-a47f-a3598060f7ea.jpg",
-    fun: "Знает финансы так, что банки нервно покуривают в сторонке.",
-  },
-  {
-    name: "Ушакова Елена Владимировна",
-    role: "Старший методист",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/c58563be-6873-4d6c-8d9f-2750acd1f631.jpg",
-    fun: "Отсекает лишние идеи. Оставляет только лучшие.",
-  },
-  {
-    name: "Бзыкина Елена Валентиновна",
-    role: "Методист",
-    photo: "",
-    fun: "Методист, о котором вы услышите. Когда появится фото — увидите.",
-  },
-  {
-    name: "Гиллунг Елена Оттовна",
-    role: "Методист",
-    photo: "",
-    fun: "Методист настолько методичный, что даже фото сдаст по графику.",
-  },
-  {
-    name: "Заливина Вера Валерьевна",
-    role: "Методист",
-    photo: "",
-    fun: "Заливает знания в головы учеников. Экологично и без давления.",
-  },
-  {
-    name: "Кичко Елена Сергеевна",
-    role: "Методист",
-    photo: "",
-    fun: "Звучит как звук открывающейся копилки. Совпадение? Не думаем.",
-  },
-  {
-    name: "Курбатова Ольга Григорьевна",
-    role: "Методист",
-    photo: "",
-    fun: "На крутых поворотах программы всегда держит руль ровно.",
-  },
-  {
-    name: "Парфенова Александра Романовна",
-    role: "Методист",
-    photo: "",
-    fun: "Дизайнер. Отвечала за то, чтобы герб не получился слишком серьёзным.",
-  },
-  {
-    name: "Пшенко Валерия Алексеевна",
-    role: "Методист",
-    photo: "",
-    fun: "Питательный вклад в программу. Методист, на котором всё держится.",
-  },
-  {
-    name: "Токарева Татьяна Владимировна",
-    role: "Методист",
-    photo: "",
-    fun: "Точит знания до острого состояния. Осторожно — умно!",
-  },
-  {
-    name: "Тупотилова Анастасия Витальевна",
-    role: "Методист",
-    photo: "",
-    fun: "Самая сообразительная в методике финансов. Название обманчивое.",
+    name: "Алексеенко Елена Вячеславовна",
+    role: "Доцент кафедры ЭММ",
+    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/6cf2e4b5-0e73-410a-9d3a-aa38c0086811.jpg",
+    fun: "Доцент кафедры ЭММ ФГБОУ ВО «ОмГПУ». Знает о финансах всё — и немного больше!",
   },
 ];
 
 export const COAT_OF_ARMS_URL =
-  "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/28562c26-42b5-4bac-ad2a-1c93a7d98a22.png";
+  "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/1f1e7dbf-c9aa-49a9-9c69-3a3310ecb76c.jpg";
 
 export const FUN_FACTS = [
-  { num: "19", label: "Наставников", sub: "одна большая команда" },
   { num: "7", label: "Тем в программе", sub: "от бюджета до инвестиций" },
-  { num: "55", label: "Сириус", sub: "наша программа" },
+  { num: "55", label: "Сириус", sub: "финансовая грамотность: просто о сложном" },
 ];
 
 export type Service = {
@@ -184,29 +81,13 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
-    id: "secret-card",
-    title: "Секретная карта «Сириус 55»",
-    description:
-      "Хочешь почувствовать себя держателем элитной карты? «Сириус 55» — это дизайн + магия. Сотри штрих-код и получи мгновенный финансовый совет или прикол. Каждый раз — новый!",
-    price: 250,
-    icon: "CreditCard",
-    featured: true,
-  },
-  {
     id: "horoscope",
     title: "Финансовый гороскоп на неделю",
     description:
       "Что звёзды говорят о вашем кошельке? Гороскоп от штатного астролога-экономиста.",
     price: 150,
     icon: "Star",
-  },
-  {
-    id: "cat-lifehack",
-    title: "Лайфхак от кота-аналитика",
-    description:
-      "Наш виртуальный кот знает, как сэкономить, не ущемляя себя в главном. Один способ — в подарок.",
-    price: 100,
-    icon: "Cat",
+    featured: true,
   },
   {
     id: "affirmation",
@@ -327,7 +208,7 @@ export const SERVICES_SUBTITLE = "Эксперименты с деньгами (
 
 export const SCAM_IMAGES = {
   thief: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/236fe1fa-d3fd-425b-b947-3a1386c94583.jpg",
-  infographic: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/5f38b4aa-ac64-429b-aeb2-41c0723d86ca.jpg",
+  infographic: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/8c1ad858-6c52-4f3a-b362-3d3c9adb8eb4.jpg",
 };
 
 export const SIRIUS_LOGO_URL = "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/2a471c76-b870-4fc9-afe4-b309c1bcbd4b.jpg";
