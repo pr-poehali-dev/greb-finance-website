@@ -26,54 +26,73 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-24 px-6" style={{ background: "var(--cream)" }}>
       <div className="max-w-7xl mx-auto">
-
-        {/* Header */}
         <RevealSection>
           <div className="text-center mb-16">
             <p
               className="text-xs font-bold tracking-[0.3em] uppercase mb-3"
               style={{ color: "var(--gold)" }}
             >
-              🎓 О проекте
+              <Icon name="BookOpen" size={14} className="inline mr-1 -mt-0.5" />
+              О проекте
             </p>
             <h2
               className="font-cormorant text-4xl md:text-5xl font-bold mb-4"
               style={{ color: "var(--navy)" }}
             >
-              Кто такие ГЕРБ и зачем мы?
+              Зачем это всё
             </h2>
             <span className="gold-line mx-auto block" />
           </div>
         </RevealSection>
 
-        {/* About block */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <RevealSection>
             <div>
-              <div
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-5"
-                style={{ background: "rgba(201,168,76,0.12)", color: "var(--gold)" }}
+              <p
+                className="text-lg leading-relaxed mb-5"
+                style={{ color: "rgba(13,27,62,0.72)" }}
               >
-                Участники программы Сириус 55
-              </div>
-              <p className="text-lg leading-relaxed mb-5" style={{ color: "rgba(13,27,62,0.72)" }}>
-                Мы — обучающиеся дополнительной программы <strong>«Сириус 55»</strong> по направлению
-                финансовой грамотности. Наш проект ГЕРБ — это наш продукт: весёлый, полезный и
-                понятный сайт про деньги.
+                Мы решили, что финансовая грамотность — это не только скучные
+                таблицы и графики. Это ещё и умение посмеяться над своими ошибками
+                (например, над спонтанной покупкой пятой кружки с котиками).
               </p>
-              <p className="text-lg leading-relaxed mb-8" style={{ color: "rgba(13,27,62,0.72)" }}>
-                Мы сами только учимся управлять финансами — и делимся этим с вами. Никакого занудства,
-                только польза и немного юмора 😄
+              <p
+                className="text-lg leading-relaxed mb-8"
+                style={{ color: "rgba(13,27,62,0.72)" }}
+              >
+                Наш герб — напоминание:{" "}
+                <strong style={{ color: "var(--navy)" }}>
+                  деньги любят счёт, а жизнь — улыбку
+                </strong>
+                . Мы сами только учимся управлять финансами — и делимся этим с
+                вами. Никакого занудства, только польза и немного юмора.
               </p>
               <div className="flex flex-col gap-3">
                 {[
-                  { emoji: "🏫", text: "Программа Сириус 55 — дополнительное образование" },
-                  { emoji: "📚", text: "Изучаем: доход, инфляцию, кредит, инвестиции, бюджет" },
-                  { emoji: "🌐", text: "Наш продукт — этот сайт. Да, тот самый, что вы читаете!" },
+                  {
+                    icon: "GraduationCap",
+                    text: "Профильная смена по финансовой грамотности — Сириус 55",
+                  },
+                  {
+                    icon: "BookOpen",
+                    text: "Изучаем: доход, инфляцию, кредит, инвестиции, бюджет, финансовые цели",
+                  },
+                  {
+                    icon: "Globe",
+                    text: "Наш продукт — этот сайт. Да, тот самый, что вы читаете!",
+                  },
                 ].map((item) => (
                   <div key={item.text} className="flex items-start gap-3">
-                    <span className="text-xl">{item.emoji}</span>
-                    <span className="text-sm font-medium pt-0.5" style={{ color: "var(--navy)" }}>
+                    <div
+                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                      style={{ background: "rgba(201,168,76,0.12)" }}
+                    >
+                      <Icon name={item.icon} size={16} style={{ color: "var(--gold)" }} />
+                    </div>
+                    <span
+                      className="text-sm font-medium pt-1"
+                      style={{ color: "var(--navy)" }}
+                    >
                       {item.text}
                     </span>
                   </div>
@@ -84,7 +103,6 @@ export default function AboutSection() {
 
           <RevealSection>
             <div className="flex flex-col gap-4">
-              {/* Герб в разделе */}
               <div
                 className="rounded-3xl p-6 flex items-center gap-5 border"
                 style={{
@@ -94,23 +112,26 @@ export default function AboutSection() {
               >
                 <img
                   src={COAT_OF_ARMS_URL}
-                  alt="Герб ГЕРБ"
+                  alt="Герб финансовой грамотности"
                   className="w-20 h-20 object-contain flex-shrink-0"
-                  style={{ filter: "drop-shadow(0 0 10px rgba(201,168,76,0.3))" }}
+                  style={{
+                    filter: "drop-shadow(0 0 10px rgba(201,168,76,0.3))",
+                  }}
                 />
                 <div>
                   <p className="font-cormorant text-xl italic text-white/90 mb-1">
-                    «Финансовая грамотность — это суперсила,
-                    доступная каждому»
+                    «Финансовая грамотность — это суперсила, доступная каждому»
                   </p>
                   <span className="gold-line block mt-2" />
-                  <p className="mt-2 text-xs font-bold tracking-wide" style={{ color: "var(--gold)" }}>
-                    Девиз команды ГЕРБ
+                  <p
+                    className="mt-2 text-xs font-bold tracking-wide"
+                    style={{ color: "var(--gold)" }}
+                  >
+                    Девиз участников смены
                   </p>
                 </div>
               </div>
 
-              {/* Fun card */}
               <div
                 className="rounded-3xl p-5 border text-center"
                 style={{
@@ -118,11 +139,22 @@ export default function AboutSection() {
                   borderColor: "rgba(201,168,76,0.2)",
                 }}
               >
-                <p className="text-3xl mb-2">🤓</p>
-                <p className="font-bold text-sm" style={{ color: "var(--navy)" }}>
+                <Icon
+                  name="PiggyBank"
+                  size={36}
+                  className="mx-auto mb-2"
+                  style={{ color: "var(--gold)" }}
+                />
+                <p
+                  className="font-bold text-sm"
+                  style={{ color: "var(--navy)" }}
+                >
                   Знаете ли вы, что 80% людей не ведут бюджет?
                 </p>
-                <p className="text-xs mt-1" style={{ color: "rgba(13,27,62,0.55)" }}>
+                <p
+                  className="text-xs mt-1"
+                  style={{ color: "rgba(13,27,62,0.55)" }}
+                >
                   Мы входим в оставшиеся 20%. И вас научим!
                 </p>
               </div>
@@ -130,13 +162,19 @@ export default function AboutSection() {
           </RevealSection>
         </div>
 
-        {/* Темы программы */}
         <RevealSection>
           <div className="text-center mb-8">
-            <h3 className="font-cormorant text-3xl font-bold" style={{ color: "var(--navy)" }}>
-              Что мы изучаем 📚
+            <h3
+              className="font-cormorant text-3xl font-bold"
+              style={{ color: "var(--navy)" }}
+            >
+              <Icon name="BookOpen" size={24} className="inline mr-2 -mt-1" style={{ color: "var(--gold)" }} />
+              Что мы изучаем
             </h3>
-            <p className="text-sm mt-2" style={{ color: "rgba(13,27,62,0.5)" }}>
+            <p
+              className="text-sm mt-2"
+              style={{ color: "rgba(13,27,62,0.5)" }}
+            >
               6 тем — от простого к сложному (и от скучного к интересному)
             </p>
           </div>
@@ -150,23 +188,38 @@ export default function AboutSection() {
                 style={{ borderColor: "rgba(13,27,62,0.08)" }}
               >
                 <div className="flex items-start gap-4 mb-3">
-                  <span className="text-3xl">{f.emoji}</span>
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: "rgba(201,168,76,0.1)" }}
+                  >
+                    <Icon
+                      name={f.icon}
+                      size={22}
+                      style={{ color: "var(--gold)" }}
+                    />
+                  </div>
                   <div
                     className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ background: "rgba(201,168,76,0.1)" }}
+                    style={{ background: "rgba(13,27,62,0.05)" }}
                   >
                     <span
                       className="text-xs font-bold"
-                      style={{ color: "var(--gold)" }}
+                      style={{ color: "var(--navy)" }}
                     >
                       {i + 1}
                     </span>
                   </div>
                 </div>
-                <h3 className="font-bold text-base mb-2" style={{ color: "var(--navy)" }}>
+                <h3
+                  className="font-bold text-base mb-2"
+                  style={{ color: "var(--navy)" }}
+                >
                   {f.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "rgba(13,27,62,0.58)" }}>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "rgba(13,27,62,0.58)" }}
+                >
                   {f.desc}
                 </p>
               </div>

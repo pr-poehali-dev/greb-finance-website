@@ -18,34 +18,38 @@ export default function Navbar() {
         scrolled ? "shadow-xl py-2" : "py-4"
       }`}
       style={{
-        background: scrolled
-          ? "rgba(10,20,50,0.97)"
-          : "transparent",
+        background: scrolled ? "rgba(10,20,50,0.97)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
         <button
           onClick={() => handleNav("#home")}
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-3 group"
         >
-          <span
-            className="font-bold text-xl tracking-widest uppercase transition-all group-hover:scale-110"
+          <Icon
+            name="Shield"
+            size={28}
+            className="transition-all group-hover:scale-110"
             style={{ color: "var(--gold)" }}
-          >
-            ГЕРБ
-          </span>
-          <span
-            className="text-xs font-medium px-2 py-0.5 rounded-full hidden sm:block"
-            style={{ background: "rgba(201,168,76,0.15)", color: "var(--gold)" }}
-          >
-            Сириус 55
-          </span>
+          />
+          <div className="flex flex-col">
+            <span
+              className="font-cormorant font-bold text-lg leading-tight tracking-wide"
+              style={{ color: "var(--gold)" }}
+            >
+              Герб финансовой грамотности
+            </span>
+            <span
+              className="text-[10px] tracking-widest uppercase hidden sm:block"
+              style={{ color: "rgba(255,255,255,0.4)" }}
+            >
+              Символ разумного подхода к деньгам
+            </span>
+          </div>
         </button>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-5">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.href}
@@ -59,20 +63,19 @@ export default function Navbar() {
         </nav>
 
         <button
-          className="hidden md:flex items-center gap-2 text-sm font-bold px-5 py-2 rounded-full transition-all hover:scale-105 hover:shadow-lg"
+          className="hidden lg:flex items-center gap-2 text-sm font-bold px-5 py-2 rounded-full transition-all hover:scale-105 hover:shadow-lg"
           style={{
             background: "linear-gradient(135deg, var(--gold), #e8c96b)",
             color: "var(--navy)",
           }}
-          onClick={() => handleNav("#contacts")}
+          onClick={() => handleNav("#services")}
         >
-          <span>Вступить</span>
-          <span>🚀</span>
+          <Icon name="Gift" size={16} />
+          <span>Услуги</span>
         </button>
 
-        {/* Burger */}
         <button
-          className="md:hidden"
+          className="lg:hidden"
           style={{ color: "white" }}
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -80,17 +83,16 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div
-          className="md:hidden absolute top-full left-0 right-0 shadow-2xl py-6 px-6 flex flex-col gap-3"
+          className="lg:hidden absolute top-full left-0 right-0 shadow-2xl py-6 px-6 flex flex-col gap-3"
           style={{ background: "rgba(10,20,50,0.98)", backdropFilter: "blur(12px)" }}
         >
           {NAV_ITEMS.map((item) => (
             <button
               key={item.href}
               onClick={() => handleNav(item.href)}
-              className="text-left text-base font-medium py-1 border-b transition-colors hover:text-white"
+              className="text-left text-base font-medium py-2 border-b transition-colors hover:text-white"
               style={{
                 color: "rgba(255,255,255,0.75)",
                 borderColor: "rgba(255,255,255,0.06)",
@@ -105,9 +107,10 @@ export default function Navbar() {
               background: "linear-gradient(135deg, var(--gold), #e8c96b)",
               color: "var(--navy)",
             }}
-            onClick={() => handleNav("#contacts")}
+            onClick={() => handleNav("#services")}
           >
-            Вступить 🚀
+            <Icon name="Gift" size={16} />
+            Услуги
           </button>
         </div>
       )}

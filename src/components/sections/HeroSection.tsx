@@ -9,74 +9,48 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ background: "var(--navy)" }}
     >
-      {/* Animated background dots */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {["💰", "📈", "💡", "🪙", "📊", "💳", "🏦", "💎"].map((emoji, i) => (
-          <span
-            key={i}
-            className="absolute text-2xl select-none opacity-10 animate-bounce"
-            style={{
-              left: `${10 + i * 12}%`,
-              top: `${15 + (i % 3) * 25}%`,
-              animationDelay: `${i * 0.4}s`,
-              animationDuration: `${2.5 + i * 0.3}s`,
-              fontSize: `${1.2 + (i % 3) * 0.5}rem`,
-            }}
-          >
-            {emoji}
-          </span>
-        ))}
-      </div>
-
-      {/* Radial glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
           background: "radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 65%)",
         }}
       />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* ГЕРБ — главный символ */}
         <div
           className="mb-8 flex justify-center animate-fade-in"
           style={{ animationDuration: "0.8s" }}
         >
           <div className="relative group cursor-pointer">
-            {/* Outer rotating ring */}
             <div
               className="absolute -inset-6 rounded-full opacity-20 pointer-events-none"
               style={{
-                background: "conic-gradient(from 0deg, var(--gold), transparent, var(--gold), transparent, var(--gold))",
+                background:
+                  "conic-gradient(from 0deg, var(--gold), transparent, var(--gold), transparent, var(--gold))",
                 animation: "spin 8s linear infinite",
               }}
             />
-            {/* Pulsing glow */}
             <div
               className="absolute -inset-4 rounded-full pointer-events-none"
               style={{
-                background: "radial-gradient(circle, rgba(201,168,76,0.25) 0%, transparent 70%)",
+                background:
+                  "radial-gradient(circle, rgba(201,168,76,0.25) 0%, transparent 70%)",
                 animation: "pulse-glow 2.5s ease-in-out infinite",
               }}
             />
-            {/* Inner glow on hover */}
-            <div
-              className="absolute -inset-2 rounded-full opacity-0 group-hover:opacity-60 blur-lg transition-all duration-700 pointer-events-none"
-              style={{ background: "radial-gradient(circle, var(--gold), transparent 65%)" }}
-            />
             <img
               src={COAT_OF_ARMS_URL}
-              alt="Герб проекта ГЕРБ — Неделя финансовой грамотности Сириус 55"
+              alt="Герб финансовой грамотности"
               className="relative w-56 h-56 md:w-72 md:h-72 object-contain transition-transform duration-500 group-hover:scale-110"
               style={{
-                filter: "drop-shadow(0 0 24px rgba(201,168,76,0.5)) drop-shadow(0 8px 32px rgba(0,0,0,0.4))",
+                filter:
+                  "drop-shadow(0 0 24px rgba(201,168,76,0.5)) drop-shadow(0 8px 32px rgba(0,0,0,0.4))",
                 animation: "floatHerb 4s ease-in-out infinite",
               }}
             />
           </div>
         </div>
 
-        {/* Badge */}
         <div
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-5 animate-fade-up"
           style={{
@@ -87,46 +61,30 @@ export default function HeroSection() {
             opacity: 0,
           }}
         >
-          <span>⭐</span>
-          <span>Участники программы Сириус 55</span>
-          <span>⭐</span>
+          <Icon name="Star" size={14} />
+          <span>Профильная смена по финансовой грамотности</span>
+          <Icon name="Star" size={14} />
         </div>
 
         <h1
-          className="font-cormorant text-5xl md:text-7xl font-bold leading-tight text-white mb-3 animate-fade-up"
+          className="font-cormorant text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-4 animate-fade-up"
           style={{ animationDelay: "0.35s", opacity: 0 }}
         >
-          Проект{" "}
-          <span
-            className="relative"
-            style={{ color: "var(--gold)" }}
-          >
-            ГЕРБ
-          </span>
+          Герб, который объединил{" "}
+          <span style={{ color: "var(--gold)" }}>финансы и креатив</span>
         </h1>
-
-        <p
-          className="font-montserrat text-xl md:text-2xl font-light mb-4 animate-fade-up"
-          style={{
-            color: "rgba(255,255,255,0.7)",
-            animationDelay: "0.45s",
-            opacity: 0,
-          }}
-        >
-          🎓 Неделя финансовой грамотности
-        </p>
 
         <p
           className="text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up"
           style={{
-            color: "rgba(255,255,255,0.5)",
-            animationDelay: "0.55s",
+            color: "rgba(255,255,255,0.55)",
+            animationDelay: "0.5s",
             opacity: 0,
           }}
         >
-          Мы — команда обучающихся дополнительной программы <strong style={{ color: "var(--gold)" }}>Сириус 55</strong>.
-          Наш проект — это весёлое и полезное путешествие в мир финансов.
-          Кредит, инфляция, инвестиции — звучит скучно? Посмотрим! 😄
+          Участники смены по финансовой грамотности создали символ, отражающий
+          главные принципы: знание, расчёт и умение не терять чувство юмора
+          даже при обсуждении бюджета.
         </p>
 
         <div
@@ -141,20 +99,23 @@ export default function HeroSection() {
             }}
             onClick={() => scrollToSection("#about")}
           >
-            <span>Узнать о проекте</span>
-            <span className="transition-transform group-hover:translate-x-1">→</span>
+            <span>Подробнее</span>
+            <Icon
+              name="ArrowDown"
+              size={16}
+              className="transition-transform group-hover:translate-y-0.5"
+            />
           </button>
           <button
             className="flex items-center gap-2 px-8 py-4 rounded-full font-bold text-sm tracking-wide border text-white transition-all hover:bg-white/10"
             style={{ borderColor: "rgba(201,168,76,0.4)" }}
-            onClick={() => scrollToSection("#contacts")}
+            onClick={() => scrollToSection("#services")}
           >
-            <span>Связаться с нами</span>
-            <span>✉️</span>
+            <Icon name="Gift" size={16} />
+            <span>Наши услуги</span>
           </button>
         </div>
 
-        {/* Fun stats */}
         <div
           className="mt-16 grid grid-cols-3 gap-4 max-w-md mx-auto animate-fade-up"
           style={{ animationDelay: "0.8s", opacity: 0 }}
@@ -168,9 +129,17 @@ export default function HeroSection() {
                 border: "1px solid rgba(201,168,76,0.15)",
               }}
             >
-              <div className="text-2xl mb-1">{s.num}</div>
+              <div
+                className="text-2xl font-bold mb-1"
+                style={{ color: "var(--gold)" }}
+              >
+                {s.num}
+              </div>
               <div className="text-xs font-bold text-white">{s.label}</div>
-              <div className="text-[10px] mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
+              <div
+                className="text-[10px] mt-0.5"
+                style={{ color: "rgba(255,255,255,0.35)" }}
+              >
                 {s.sub}
               </div>
             </div>
@@ -179,7 +148,11 @@ export default function HeroSection() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <Icon name="ChevronDown" size={22} style={{ color: "var(--gold)", opacity: 0.5 }} />
+        <Icon
+          name="ChevronDown"
+          size={22}
+          style={{ color: "var(--gold)", opacity: 0.5 }}
+        />
       </div>
     </section>
   );

@@ -242,3 +242,20 @@
 .clip-diagonal-reverse {
   clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
 }
+
+@keyframes coinFall {
+  0% {
+    transform: translateY(-30px) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.06;
+  }
+  95% {
+    opacity: 0.06;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
