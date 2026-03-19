@@ -170,6 +170,15 @@ function SecurityCard({
   );
 }
 
+const RECOMMENDATIONS = [
+  { icon: "Phone", title: "Не отвечайте на незнакомые номера", desc: "Если звонят «из банка» — положите трубку и перезвоните по номеру на карте" },
+  { icon: "Lock", title: "Никому не сообщайте коды из СМС", desc: "Даже если звонящий представляется сотрудником банка, полиции или ФСБ" },
+  { icon: "Eye", title: "Проверяйте адрес сайта", desc: "Мошенники создают сайты-двойники. Обращайте внимание на каждую букву в URL" },
+  { icon: "CreditCard", title: "Не переводите деньги незнакомцам", desc: "«Мама, я попал в аварию!» — всегда перезванивайте родственнику лично" },
+  { icon: "Wifi", title: "Не пользуйтесь публичным Wi-Fi для платежей", desc: "Открытые сети — рай для хакеров. Используйте мобильный интернет" },
+  { icon: "ShieldCheck", title: "Установите антивирус", desc: "И не переходите по ссылкам из подозрительных сообщений, даже от друзей" },
+];
+
 export default function SecuritySection() {
   return (
     <section
@@ -179,7 +188,7 @@ export default function SecuritySection() {
     >
       <div className="max-w-7xl mx-auto">
         <RevealSection>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <p
               className="text-xs font-bold tracking-[0.3em] uppercase mb-3"
               style={{ color: "var(--navy)" }}
@@ -200,18 +209,98 @@ export default function SecuritySection() {
               style={{ color: "rgba(13,27,62,0.55)" }}
             >
               Памятка, которую стоит прочитать каждому. Мошенники не дремлют —
-              а вы будьте начеку.
+              а вы будьте начеку! 🛡️
             </p>
           </div>
         </RevealSection>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <RevealSection>
+          <div className="flex flex-col md:flex-row items-center gap-6 mb-12 rounded-3xl p-6" style={{ background: "rgba(13,27,62,0.03)", border: "1px solid rgba(13,27,62,0.08)" }}>
+            <img
+              src="https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/236fe1fa-d3fd-425b-b947-3a1386c94583.jpg"
+              alt="Осторожно мошенники"
+              className="w-full md:w-64 rounded-2xl shadow-lg"
+              style={{ border: "2px solid rgba(220,50,50,0.2)" }}
+            />
+            <div className="flex-1">
+              <h3 className="font-cormorant text-2xl font-bold mb-3" style={{ color: "#dc3232" }}>
+                🚨 Осторожно: мошенники не дремлют!
+              </h3>
+              <p className="text-sm leading-relaxed mb-3" style={{ color: "rgba(13,27,62,0.65)" }}>
+                Каждый день тысячи людей становятся жертвами финансовых мошенников.
+                Они звонят, пишут, создают поддельные сайты — и всё ради ваших денег.
+                Но есть хорошая новость: <strong>зная их приёмы, вы легко их обойдёте!</strong>
+              </p>
+              <p className="text-sm italic" style={{ color: "rgba(13,27,62,0.45)" }}>
+                Помните: настоящий банк никогда не попросит ваш пароль или код из СМС 😉
+              </p>
+            </div>
+          </div>
+        </RevealSection>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
           {SECURITY_CARDS.map((card) => (
             <RevealSection key={card.title}>
               <SecurityCard {...card} />
             </RevealSection>
           ))}
         </div>
+
+        <RevealSection>
+          <div className="mb-12">
+            <h3 className="font-cormorant text-3xl font-bold text-center mb-8" style={{ color: "var(--navy)" }}>
+              🛡️ Рекомендации: как не попасться мошенникам
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {RECOMMENDATIONS.map((rec, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl p-5 border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  style={{
+                    background: "white",
+                    borderColor: "rgba(46,110,74,0.15)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ background: "rgba(46,110,74,0.1)" }}
+                    >
+                      <Icon name={rec.icon} size={20} style={{ color: "#2e6e4a" }} />
+                    </div>
+                    <h4 className="font-bold text-sm" style={{ color: "var(--navy)" }}>
+                      {rec.title}
+                    </h4>
+                  </div>
+                  <p className="text-xs leading-relaxed" style={{ color: "rgba(13,27,62,0.55)" }}>
+                    {rec.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </RevealSection>
+
+        <RevealSection>
+          <div className="rounded-3xl overflow-hidden border mb-8" style={{ borderColor: "rgba(13,27,62,0.1)" }}>
+            <div className="p-4 text-center" style={{ background: "rgba(13,27,62,0.03)" }}>
+              <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "rgba(13,27,62,0.4)" }}>
+                📋 Полная памятка о видах мошенничества
+              </p>
+            </div>
+            <img
+              src="https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/5f38b4aa-ac64-429b-aeb2-41c0723d86ca.jpg"
+              alt="Осторожно: мошенники! Полная инфографика"
+              className="w-full"
+            />
+            <div className="p-4 text-center" style={{ background: "rgba(13,27,62,0.03)" }}>
+              <p className="text-xs" style={{ color: "rgba(13,27,62,0.45)" }}>
+                Сохрани эту памятку себе и поделись с близкими! 📤
+              </p>
+            </div>
+          </div>
+        </RevealSection>
 
         <RevealSection>
           <div className="text-center">

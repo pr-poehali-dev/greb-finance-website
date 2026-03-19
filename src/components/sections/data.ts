@@ -51,19 +51,19 @@ export const ALL_TEACHERS: TeamMember[] = [
   {
     name: "Баракина Татьяна Вячеславовна",
     role: "Директор",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/a1bd79ce-ee22-4a47-85ce-43e13ae0b6e9.png",
+    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/aa748f0c-6aed-4744-b9b8-0b98a066b28e.jpg",
     fun: "Идейный вдохновитель и хранитель бюджета смены. Знает, куда уходят деньги, но молчит.",
   },
   {
     name: "Летунова Наталья Павловна",
     role: "Заместитель директора",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/c3565dc5-d5df-479b-8d6e-7d5f30629b71.png",
+    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/9b3cb666-921f-4ebc-b444-e47a1509fa48.png",
     fun: "Замещает директора так хорошо, что директор иногда завидует.",
   },
   {
     name: "Андреев Игорь Викторович",
     role: "Заместитель директора",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/940e1b7b-4d73-41be-800b-c538d05d5f05.jpg",
+    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/a5352caa-9e96-4650-8d2e-1e144af121e7.png",
     fun: "Главный аналитик. Может на графике объяснить, почему шоколадка подорожала, а стипендия — нет.",
   },
   {
@@ -321,6 +321,16 @@ export const RANDOM_ADVICE = [
   "Сложный процент — восьмое чудо света. Используй его!",
   "Не бойся инвестировать в себя — это самый надёжный актив.",
 ];
+
+export const SERVICES_TITLE = "Финансовая лаборатория";
+export const SERVICES_SUBTITLE = "Эксперименты с деньгами (виртуальными, конечно!)";
+
+export const SCAM_IMAGES = {
+  thief: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/236fe1fa-d3fd-425b-b947-3a1386c94583.jpg",
+  infographic: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/5f38b4aa-ac64-429b-aeb2-41c0723d86ca.jpg",
+};
+
+export const SIRIUS_LOGO_URL = "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/2a471c76-b870-4fc9-afe4-b309c1bcbd4b.jpg";
 
 export const CONTACTS = {
   telegram: { username: "G_Cheburashka", url: "tg://resolve?domain=G_Cheburashka" },
