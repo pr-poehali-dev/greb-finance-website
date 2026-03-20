@@ -40,7 +40,7 @@ export default function HeroSection() {
             />
             <img
               src={COAT_OF_ARMS_URL}
-              alt="Герб финансовой грамотности"
+              alt="Герб Сириус 55 — финансовая грамотность"
               className="relative w-72 h-72 md:w-96 md:h-96 object-contain transition-transform duration-500 group-hover:scale-110"
               style={{
                 filter:
@@ -62,7 +62,7 @@ export default function HeroSection() {
           }}
         >
           <Icon name="Star" size={14} />
-          <span>Профильная смена по финансовой грамотности</span>
+          <span>Сириус 55 — профильная смена</span>
           <Icon name="Star" size={14} />
         </div>
 
@@ -70,8 +70,8 @@ export default function HeroSection() {
           className="font-cormorant text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-4 animate-fade-up"
           style={{ animationDelay: "0.35s", opacity: 0 }}
         >
-          Герб, который объединил{" "}
-          <span style={{ color: "var(--gold)" }}>финансы и креатив</span>
+          Сириус 55:{" "}
+          <span style={{ color: "var(--gold)" }}>неделя финансовой грамотности</span>
         </h1>
 
         <p
@@ -82,9 +82,9 @@ export default function HeroSection() {
             opacity: 0,
           }}
         >
-          Участники смены по финансовой грамотности создали символ, отражающий
-          главные принципы: знание, расчёт и умение не терять чувство юмора
-          даже при обсуждении бюджета.
+          Кредит, доход, инфляция, налоги, резерв — всё, что нужно знать
+          о деньгах, чтобы управлять ими, а не наоборот. Просто, весело
+          и с пользой на всю жизнь!
         </p>
 
         <div

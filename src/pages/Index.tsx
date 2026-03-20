@@ -65,7 +65,7 @@ function Footer() {
             className="font-cormorant font-bold text-lg"
             style={{ color: "var(--gold)" }}
           >
-            Герб финансовой грамотности
+            Сириус 55
           </span>
         </div>
 
@@ -84,7 +84,7 @@ function Footer() {
 
         <div className="text-center md:text-right">
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.25)" }}>
-            &copy; Герб финансовой грамотности, 2026. Все права защищены, деньги
+            &copy; Сириус 55 — финансовая грамотность, 2026. Все права защищены, деньги
             припрятаны.
           </p>
           <p
