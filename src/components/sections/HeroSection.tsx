@@ -41,12 +41,11 @@ export default function HeroSection() {
             <img
               src={COAT_OF_ARMS_URL}
               alt="Герб финансовой грамотности"
-              className="relative w-72 h-72 md:w-96 md:h-96 object-contain transition-transform duration-500 group-hover:scale-110 rounded-3xl"
+              className="relative w-72 h-72 md:w-96 md:h-96 object-contain transition-transform duration-500 group-hover:scale-110"
               style={{
                 filter:
                   "drop-shadow(0 0 24px rgba(201,168,76,0.5)) drop-shadow(0 8px 32px rgba(0,0,0,0.4))",
                 animation: "floatHerb 4s ease-in-out infinite",
-                mixBlendMode: "screen",
               }}
             />
           </div>

@@ -49,21 +49,21 @@ export type TeamMember = {
 
 export const ALL_TEACHERS: TeamMember[] = [
   {
-    name: "Гешко Олеся Александровна",
-    role: "Доцент кафедры ЭММ",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/16e5fe98-a8f7-4167-a29e-4cdf12f206a9.jpg",
-    fun: "Доцент кафедры ЭММ ФГБОУ ВО «ОмГПУ». Превращает экономику в увлекательное приключение!",
-  },
-  {
     name: "Алексеенко Елена Вячеславовна",
     role: "Доцент кафедры ЭММ",
-    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/6cf2e4b5-0e73-410a-9d3a-aa38c0086811.jpg",
+    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/de44346d-7546-4f65-ba70-f64d3a4e6beb.jpg",
     fun: "Доцент кафедры ЭММ ФГБОУ ВО «ОмГПУ». Знает о финансах всё — и немного больше!",
+  },
+  {
+    name: "Гешко Олеся Александровна",
+    role: "Доцент кафедры ЭММ",
+    photo: "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/dbe32f14-bfc3-4a51-8cf2-18adefffb329.jpg",
+    fun: "Доцент кафедры ЭММ ФГБОУ ВО «ОмГПУ». Превращает экономику в увлекательное приключение!",
   },
 ];
 
 export const COAT_OF_ARMS_URL =
-  "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/1f1e7dbf-c9aa-49a9-9c69-3a3310ecb76c.jpg";
+  "https://cdn.poehali.dev/projects/647abaef-28f5-495e-a890-6d594b0e5fe1/bucket/75e99066-0532-4e29-a989-e155cec63639.png";
 
 export const FUN_FACTS = [
   { num: "7", label: "Тем в программе", sub: "от бюджета до инвестиций" },
